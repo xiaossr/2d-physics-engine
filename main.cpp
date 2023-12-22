@@ -1,3 +1,5 @@
+#define SFML_STATIC
+
 #pragma once
 #include <bits/stdc++.h>
 #include <SFML/Graphics.hpp>
@@ -9,7 +11,7 @@ using namespace std;
 using namespace sf;
 
 int main() {
-    constexpr int windowWidth = 1500, windowHeight = 1000, frameRate = 60;
+    constexpr int windowWidth = 1000, windowHeight = 1000, frameRate = 60;
 
     sf::ContextSettings settings;
     settings.antialiasingLevel = 1;
@@ -27,7 +29,7 @@ int main() {
         solver.addObject(Vector2f(500.0 + i * 30.0, 500.0 ), 10.0, Color::White, !i);
         if(i) solver.addLink(i - 1, i);
     }
-    solver.addObject(Vector2f(680.0, 700.0), 20.0, Color::Red, 1);
+    // solver.addObject(Vector2f(680.0, 700.0), 20.0, Color::Red, 1);
 
     Clock clock;
     while(window.isOpen()) {
